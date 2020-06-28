@@ -1,0 +1,19 @@
+go.property("color", hash("yellow"))
+go.property("type", hash("plain"))
+
+local emthree = require "emthree.emthree"
+
+function init(self)
+	sprite.play_flipbook("#sprite", self.color)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == emthree.REMOVE then
+		go.delete()
+	elseif message_id == emthree.SELECT then
+		go.animate(".", "scale", go.PLAYBACK_LOOP_PINGPONG, 1.2, go.EASING_INOUTQUAD, 1)
+	elseif message_id == emthree.RESET then
+		go.cancel_animations(".", "scale")
+		go.set_scale(1)
+	end
+end
