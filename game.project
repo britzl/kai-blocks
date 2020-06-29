@@ -10,8 +10,8 @@ game_binding = /input/game.input_bindingc
 use_accelerometer = 0
 
 [display]
-width = 320
-height = 240
+width = 240
+height = 320
 
 [ios]
 bundle_identifier = com.example.todo
@@ -76,4 +76,9 @@ max_count = 0
 
 [collection]
 max_instances = 256
+
+[html5]
+scale_mode = fit
+show_fullscreen_button = 0
+show_made_with_defold = 0
 
